@@ -1,0 +1,48 @@
+plugins {
+  // For performing Sonarqube/Sonarcloud analysis
+  id "org.sonarqube" version "3.5.0.2730"
+
+  // For running Java/Scala/Kotlin files through gradle
+  id "application"
+
+  // For running Kotlin Files
+  id "org.jetbrains.kotlin.jvm" version "1.9.10"
+
+  // For running Scala Files
+  id 'scala'
+}
+
+repositories {
+  mavenCentral()
+}
+
+// for running both scala and java applications using the relevant application plugin
+// The default central class the application plugin runs in 'App', so the file needs to be renamed to that
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala']
+        }
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+}
+
+// Setting the properties required to perform sonarqube analysis using 'gradlew sonar'
+sonar {
+    properties {
+        property('sonar.projectName', 'sonarqube-kotlin-project')
+        property("sonar.projectKey", 'sonarqube-kotlin-project')
+        property("sonar.host.url", "http://localhost:9000")
+        property("sonar.login", "sqp_e12d7f7d420495555679aaafa05e3c5f39800d3c")
+    }
+}
+
+dependencies {
+    // For Running Kotlin files
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    // For Running Scala files
+    implementation 'org.scala-lang:scala3-library_3:3.0.1'
+}
