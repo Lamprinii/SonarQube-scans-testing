@@ -4,9 +4,6 @@
 # Ignore Gradle build output directory
 build
 
-# Ignore project notes
-README.md
-
 # Ignore sonar-project.properties file
 sonar-project.properties
 
