@@ -1,0 +1,3 @@
+mode: count
+test-go-project/main.go:7.23,9.2 1 1
+test-go-project/main.go:11.13,14.2 2 0

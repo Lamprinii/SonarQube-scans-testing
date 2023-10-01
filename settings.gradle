@@ -10,4 +10,5 @@
 rootProject.name = 'SonarQube-scans-testing'
 
 // Directories to be included in the gradle sonar scan should be mentioned here
+// Similar to the sonar.sources property if you have multiple sources to be scanned
 include('app')
