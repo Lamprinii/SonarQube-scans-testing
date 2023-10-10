@@ -1,4 +1,5 @@
 # Token for sonarqube analysis
+
 - First generate a sonarqube token to make a project analyzable
 
 ```text
@@ -8,6 +9,7 @@ SONARQUBE_TOKEN: sqp_e12d7f7d420495555679aaafa05e3c5f39800d3c
 - Replace the places mentioned as SONARQUBE_TOKEN with the actual token in the following guide
 
 # Utilizing the Sonar Scanner for gradle for performing analysis
+
 1. Set up the build.gradle file
 
 ```build.gradle
@@ -50,6 +52,7 @@ gradlew sonar
 ```
 
 ## Notes regarding the gradle application plugin
+
 1. this plugin automatically sets up the sonar properties required to
    do a proper analysis of code and send the results to the sonarQube server
 
@@ -60,6 +63,7 @@ gradlew sonar
    responsible for generating the reports that are then sent to sonarQube
 
 # Utilizing the Sonar Scanner for performing analysis
+
 1. Download the Sonar Scanner
 
 2. Create a sonar-project.properties file in the root directory so that the scan will be triggered for the entire
@@ -73,20 +77,24 @@ sonar.login=SONARQUBE_TOKEN
 ```
 
 # Procedure for invoking scans for various language source files
+
 ## For Java/Kotlin/Scala source files:
+
 1. Set up the Java/Kotlin/Scala plugins
+
 ```groovy
 plugins {
-  // For Java 
+  // For Java
   id "application"
-  // For Kotlin 
+  // For Kotlin
   id "org.jetbrains.kotlin.jvm" version "1.9.10"
-  // For Scala 
+  // For Scala
   id 'scala'
 }
 ```
 
 2. Set up the Java/Kotlin/Scala dependencies
+
 ```groovy
 dependencies {
     // For Running Kotlin files
@@ -98,6 +106,7 @@ dependencies {
 ```
 
 3. Set up the sourceSets property (Specific to Scala)
+
 ```groovy
 sourceSets {
     main {
@@ -114,6 +123,7 @@ sourceSets {
 4. Set up Sonar Scanner for Gradle
 
 5. Execute the gradle sonar command
+
 ```cmd
 gradlew sonar
 ```
@@ -121,6 +131,7 @@ gradlew sonar
 6. No further actions are required, and analysis results will be visible in SonarQube
 
 ## For Golang source files:
+
 1. We cannot use the sonar scanner for gradle
 
 2. We can only use the sonar-scanner approach for performing scans for Go Projects
@@ -128,12 +139,16 @@ gradlew sonar
 3. This is because the gradle sonar scanner is unable to include go projects even when defined in the settings.gradle
    file
 
-4. The go projects should be initiated within the root directory and not in a nested manner as the scanner is able to
-   scan for go projects in the root level
+4. Run the sonar scanner
 
-5. Provide the following in the sonar-project.properties file:
+5. No further actions are required, and analysis results will be visible in SonarQube
+
+### Inclusion of test and coverage reports for Go:
+
+1. Provide the following in the sonar-project.properties file:
+
 ```properties
-sonar.tests=.
+#sonar.tests=.
 # Remove go tests files from being in sonar scans directly
 sonar.exclusions=**/*_test.go
 
@@ -141,49 +156,76 @@ sonar.exclusions=**/*_test.go
 sonar.test.inclusions=**/*_test.go
 
 # Providing absolutely path for generated coverage report required before scans
-sonar.go.coverage.reportPaths="C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-go-project\\coverage.out"
+ sonar.go.coverage.reportPaths="C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-go-project\\coverage.out"
 
 # Providing absolutely path for generated test report required before scans
-sonar.go.tests.reportPaths="C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-go-project\\test-report.json"
+ sonar.go.tests.reportPaths="C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-go-project\\test-report.json"
 ```
-6. Run the sonar scanner
 
-7. No further actions are required, and analysis results will be visible in SonarQube
+2. navigate into the go project
+
+```cmd
+cd test-go-project
+```
+
+3.  Create a coverage report using the following command
+
+```cmd
+go test -coverprofile=coverage.out
+```
+
+4. Create a test report using the following command
+
+```cmd
+go test -json > test-report.json
+```
 
 ## For Ruby source files:
+
 - To be tested
 
 ## For JS/Python source files:
+
 1. Perform the sonar scan through any of the scanners provided (i.e: sonar scanner for gradle)
 
 2. The analysis will be taken care of automatically without any further steps
 
 # Debugging a SonarQube Project
+
 ## Initiating the debug from the scanner side:
-### From sonar scanner (Recommended for non compiled languages) 
+
+### From sonar scanner (Recommended for non compiled languages)
+
 1. set the following sonar env variable with the debug option:
+
 ```cmd
 set SONAR_SCANNER_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000"
 ```
-   
+
 2. Run the sonar-scanner
+
 ```cmd
 sonar-scanner
 ```
 
-### From sonar scanner for gradle (Suitable for sonar scanner for gradle projects)
+### From sonar scanner for gradle (Suitable for compiled languages)
+
 1. Execute the following command
+
 ```cmd
 gradlew sonar -Dorg.gradle.debug=true --no-daemon -Dorg.gradle.debug.port=8000
 ```
 
-### Setting up debug points in the plugins:   
+### Setting up debug points in the plugins:
+
 1. Create a breakpoint in the required java project class file with a java remote debug configuration set up
 
 2. Click the debug icon, to start debugging
 
 ## Initiating the debug from the web server side:
+
 - Steps to be added
 
 ## Initiating the debug from the compute engine side:
+
 - Steps to be added

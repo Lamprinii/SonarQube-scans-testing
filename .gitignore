@@ -7,8 +7,8 @@ build
 # Ignore sonar-project.properties file
 sonar-project.properties
 
-# Ignore the scanner work file created by the sonar-scanner
-.scannerwork
+# Scanner work directory contains the temporary data created by the sonar scanner when performing a scan
+# .scannerwork
 
 # Ignore vscode settings
 .vscode

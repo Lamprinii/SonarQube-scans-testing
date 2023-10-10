@@ -9,6 +9,19 @@ object App {
   }
 
   def main(args: Array[String]): Unit = {
-    hello()
+    //    hello()
+    describeAnimal("Giraffe")
   }
+
+  // Exhaustiveness check
+  // This will generate an error because the `match` expression does not handle the case where the animal is not a `Dog` or a `Cat`.
+  def describeAnimal(animal: String): String = {
+    animal match {
+      case "Dog" => "A dog is a furry four-legged animal that barks."
+      case "Cat" => "A cat is a furry four-legged animal that meows."
+    }
+  }
+
+  // Duplicate case class definitions
+  sealed trait Animal
 }
