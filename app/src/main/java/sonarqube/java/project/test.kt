@@ -1,10 +1,4 @@
-fun hello() {
-    val x:Int = 10
-    val y:Int = 20
-    val z:Int = x + y
-    return println("Hello, world!")
-}
-
-fun main() {
-    hello()
+// Non compliant as the function has more than 7 parameters in it
+fun tooManyParamsFunc(a:Int, b:Int, c:Int, d:Int, e:Int, f:Int, g:Int, h:Int, i:Int): Int{
+    return a + b + c + d + e + f + g + h + i
 }

@@ -1,0 +1,455 @@
+{ 
+  "treeMetaData": {
+    "comments": [
+            {"text":"// Non Compliant as the method body is empty", "contentText":" Non Compliant as the method body is empty", "range":"16:0::44", "contentRange": "16:2::44"},
+            {"text":"// Non Compliant function due to _ symbol", "contentText":" Non Compliant function due to _ symbol", "range":"20:0::41", "contentRange": "20:2::41"},
+            {"text":"// Non compliant as both statements are on same line", "contentText":" Non compliant as both statements are on same line", "range":"26:4::56", "contentRange": "26:6::56"},
+            {"text":"// Non compliant as variable is self assigned", "contentText":" Non compliant as variable is self assigned", "range":"31:4::49", "contentRange": "31:6::49"},
+            {"text":"// Non compliant as there are redundent pairs of parenthesis", "contentText":" Non compliant as there are redundent pairs of parenthesis", "range":"36:4::64", "contentRange": "36:6::64"},
+            {"text":"// Noncompliant", "contentText":" Noncompliant", "range":"37:19::34", "contentRange": "37:21::34"},
+            {"text":"// Non compliant as there are redundent pairs of parenthesis", "contentText":" Non compliant as there are redundent pairs of parenthesis", "range":"41:4::64", "contentRange": "41:6::64"},
+            {"text":"// Non compliant as the same message has been conveyed 3 times", "contentText":" Non compliant as the same message has been conveyed 3 times", "range":"45:0::62", "contentRange": "45:2::62"}
+    ],
+    "tokens": [
+      {"text":"package","textRange":"1:0::7","type":"KEYWORD"},
+      {"text":"main","textRange":"1:8::12"},
+      {"text":"import","textRange":"3:0::6","type":"KEYWORD"},
+      {"text":"(","textRange":"3:7::8"},
+      {"text":"\"log\"","textRange":"4:1::6","type":"STRING_LITERAL"},
+      {"text":"\"strconv\"","textRange":"5:1::10","type":"STRING_LITERAL"},
+      {"text":")","textRange":"6:0::1"},
+      {"text":"func","textRange":"8:0::4","type":"KEYWORD"},
+      {"text":"doStuff","textRange":"8:5::12"},
+      {"text":"(","textRange":"8:12::13"},
+      {"text":")","textRange":"8:13::14"},
+      {"text":"string","textRange":"8:15::21"},
+      {"text":"{","textRange":"8:22::23"},
+      {"text":"return","textRange":"9:4::10","type":"KEYWORD"},
+      {"text":"\"I do stuff!\"","textRange":"9:11::24","type":"STRING_LITERAL"},
+      {"text":"}","textRange":"10:0::1"},
+      {"text":"func","textRange":"12:0::4","type":"KEYWORD"},
+      {"text":"doPrint1","textRange":"12:5::13"},
+      {"text":"(","textRange":"12:13::14"},
+      {"text":")","textRange":"12:14::15"},
+      {"text":"{","textRange":"12:16::17"},
+      {"text":"log","textRange":"13:4::7"},
+      {"text":"Printf","textRange":"13:8::14"},
+      {"text":".","textRange":"13:7::8"},
+      {"text":"(","textRange":"13:14::15"},
+      {"text":"\"Hello world!\"","textRange":"13:15::29","type":"STRING_LITERAL"},
+      {"text":")","textRange":"13:29::30"},
+      {"text":"}","textRange":"14:0::1"},
+      {"text":"func","textRange":"17:0::4","type":"KEYWORD"},
+      {"text":"noBodyFunc","textRange":"17:5::15"},
+      {"text":"(","textRange":"17:15::16"},
+      {"text":")","textRange":"17:16::17"},
+      {"text":"{","textRange":"17:17::18"},
+      {"text":"}","textRange":"18:0::1"},
+      {"text":"func","textRange":"21:0::4","type":"KEYWORD"},
+      {"text":"non_compliant_function","textRange":"21:5::27"},
+      {"text":"(","textRange":"21:27::28"},
+      {"text":")","textRange":"21:28::29"},
+      {"text":"{","textRange":"21:29::30"},
+      {"text":"log","textRange":"22:4::7"},
+      {"text":"Printf","textRange":"22:8::14"},
+      {"text":".","textRange":"22:7::8"},
+      {"text":"(","textRange":"22:14::15"},
+      {"text":"\"This is a non compliant function in Go\"","textRange":"22:15::55","type":"STRING_LITERAL"},
+      {"text":")","textRange":"22:55::56"},
+      {"text":"}","textRange":"23:0::1"},
+      {"text":"func","textRange":"25:0::4","type":"KEYWORD"},
+      {"text":"doNonCompliantOperation","textRange":"25:5::28"},
+      {"text":"(","textRange":"25:28::29"},
+      {"text":")","textRange":"25:29::30"},
+      {"text":"{","textRange":"25:30::31"},
+      {"text":"doPrint1","textRange":"27:4::12"},
+      {"text":"(","textRange":"27:12::13"},
+      {"text":")","textRange":"27:13::14"},
+      {"text":"doPrint1","textRange":"27:16::24"},
+      {"text":"(","textRange":"27:24::25"},
+      {"text":")","textRange":"27:25::26"},
+      {"text":";","textRange":"27:14::15"},
+      {"text":"}","textRange":"28:0::1"},
+      {"text":"func","textRange":"30:0::4","type":"KEYWORD"},
+      {"text":"rename","textRange":"30:5::11"},
+      {"text":"(","textRange":"30:11::12"},
+      {"text":"name","textRange":"30:12::16"},
+      {"text":"string","textRange":"30:17::23"},
+      {"text":")","textRange":"30:23::24"},
+      {"text":"{","textRange":"30:25::26"},
+      {"text":"name","textRange":"32:4::8"},
+      {"text":"=","textRange":"32:9::10"},
+      {"text":"name","textRange":"32:11::15"},
+      {"text":"}","textRange":"33:0::1"},
+      {"text":"func","textRange":"35:0::4","type":"KEYWORD"},
+      {"text":"returnValue","textRange":"35:5::16"},
+      {"text":"(","textRange":"35:16::17"},
+      {"text":")","textRange":"35:17::18"},
+      {"text":"int","textRange":"35:19::22"},
+      {"text":"{","textRange":"35:23::24"},
+      {"text":"if","textRange":"37:4::6","type":"KEYWORD"},
+      {"text":"(","textRange":"37:7::8"},
+      {"text":"(","textRange":"37:8::9"},
+      {"text":"true","textRange":"37:9::13"},
+      {"text":")","textRange":"37:13::14"},
+      {"text":")","textRange":"37:14::15"},
+      {"text":"{","textRange":"37:16::17"},
+      {"text":"log","textRange":"38:8::11"},
+      {"text":"Printf","textRange":"38:12::18"},
+      {"text":".","textRange":"38:11::12"},
+      {"text":"(","textRange":"38:18::19"},
+      {"text":"\"Non Compliant If condition\"","textRange":"38:19::47","type":"STRING_LITERAL"},
+      {"text":")","textRange":"38:47::48"},
+      {"text":"}","textRange":"39:4::5"},
+      {"text":"return","textRange":"42:4::10","type":"KEYWORD"},
+      {"text":"(","textRange":"42:11::12"},
+      {"text":"(","textRange":"42:12::13"},
+      {"text":"20","textRange":"42:13::15"},
+      {"text":")","textRange":"42:15::16"},
+      {"text":")","textRange":"42:16::17"},
+      {"text":"}","textRange":"43:0::1"},
+      {"text":"func","textRange":"46:0::4","type":"KEYWORD"},
+      {"text":"redundentMessage","textRange":"46:5::21"},
+      {"text":"(","textRange":"46:21::22"},
+      {"text":")","textRange":"46:22::23"},
+      {"text":"{","textRange":"46:23::24"},
+      {"text":"log","textRange":"47:4::7"},
+      {"text":"Printf","textRange":"47:8::14"},
+      {"text":".","textRange":"47:7::8"},
+      {"text":"(","textRange":"47:14::15"},
+      {"text":"\"Repeated message\"","textRange":"47:15::33","type":"STRING_LITERAL"},
+      {"text":")","textRange":"47:33::34"},
+      {"text":"log","textRange":"48:4::7"},
+      {"text":"Printf","textRange":"48:8::14"},
+      {"text":".","textRange":"48:7::8"},
+      {"text":"(","textRange":"48:14::15"},
+      {"text":"\"Repeated message\"","textRange":"48:15::33","type":"STRING_LITERAL"},
+      {"text":")","textRange":"48:33::34"},
+      {"text":"log","textRange":"49:4::7"},
+      {"text":"Printf","textRange":"49:8::14"},
+      {"text":".","textRange":"49:7::8"},
+      {"text":"(","textRange":"49:14::15"},
+      {"text":"\"Repeated message\"","textRange":"49:15::33","type":"STRING_LITERAL"},
+      {"text":")","textRange":"49:33::34"},
+      {"text":"}","textRange":"50:0::1"},
+      {"text":"func","textRange":"52:0::4","type":"KEYWORD"},
+      {"text":"main","textRange":"52:5::9"},
+      {"text":"(","textRange":"52:9::10"},
+      {"text":")","textRange":"52:10::11"},
+      {"text":"{","textRange":"52:12::13"},
+      {"text":"log","textRange":"53:1::4"},
+      {"text":"Printf","textRange":"53:5::11"},
+      {"text":".","textRange":"53:4::5"},
+      {"text":"(","textRange":"53:11::12"},
+      {"text":"\"starting service sonar ...\"","textRange":"53:12::40","type":"STRING_LITERAL"},
+      {"text":")","textRange":"53:40::41"},
+      {"text":"log","textRange":"54:1::4"},
+      {"text":"Printf","textRange":"54:5::11"},
+      {"text":".","textRange":"54:4::5"},
+      {"text":"(","textRange":"54:11::12"},
+      {"text":"doStuff","textRange":"54:12::19"},
+      {"text":"(","textRange":"54:19::20"},
+      {"text":")","textRange":"54:20::21"},
+      {"text":")","textRange":"54:21::22"},
+      {"text":"doNonCompliantOperation","textRange":"55:1::24"},
+      {"text":"(","textRange":"55:24::25"},
+      {"text":")","textRange":"55:25::26"},
+      {"text":"rename","textRange":"56:1::7"},
+      {"text":"(","textRange":"56:7::8"},
+      {"text":"\"Jhon Doe\"","textRange":"56:8::18","type":"STRING_LITERAL"},
+      {"text":")","textRange":"56:18::19"},
+      {"text":"non_compliant_function","textRange":"57:1::23"},
+      {"text":"(","textRange":"57:23::24"},
+      {"text":")","textRange":"57:24::25"},
+      {"text":"log","textRange":"58:1::4"},
+      {"text":"Printf","textRange":"58:5::11"},
+      {"text":".","textRange":"58:4::5"},
+      {"text":"(","textRange":"58:11::12"},
+      {"text":"strconv","textRange":"58:12::19"},
+      {"text":"Itoa","textRange":"58:20::24"},
+      {"text":".","textRange":"58:19::20"},
+      {"text":"(","textRange":"58:24::25"},
+      {"text":"returnValue","textRange":"58:25::36"},
+      {"text":"(","textRange":"58:36::37"},
+      {"text":")","textRange":"58:37::38"},
+      {"text":")","textRange":"58:38::39"},
+      {"text":")","textRange":"58:39::40"},
+      {"text":"}","textRange":"59:0::1"}
+    ]
+  },
+  "tree":
+    {"@type": "TopLevel", "metaData": "1:0:59:1","firstCpdToken":null,"declarations":[
+      {"@type": "PackageDeclaration", "metaData": "1:0::12","children":[
+        {"@type": "Native", "metaData": "1:0::7"},
+        {"@type": "Identifier", "metaData": "1:8::12","name":"main"}
+      ]},
+      {"@type": "ImportDeclaration", "metaData": "3:0:6:1","children":[
+        {"@type": "Native", "metaData": "3:0::6","nativeKind":"Tok"},
+        {"@type": "Native", "metaData": "3:7::8","nativeKind":"Lparen"},
+        {"@type": "Native", "metaData": "4:1::6","nativeKind":"[0](ImportSpec)","children":[
+          {"@type": "StringLiteral", "metaData": "4:1::6","value":"\"log\"","content":"log"}
+        ]},
+        {"@type": "Native", "metaData": "5:1::10","nativeKind":"[1](ImportSpec)","children":[
+          {"@type": "StringLiteral", "metaData": "5:1::10","value":"\"strconv\"","content":"strconv"}
+        ]},
+        {"@type": "Native", "metaData": "6:0::1","nativeKind":"Rparen"}
+      ]},
+      {"@type": "FunctionDeclaration", "metaData": "8:0:10:1","returnType":
+        {"@type": "Native", "metaData": "8:15::21","nativeKind":"Results(FieldList)","children":[
+          {"@type": "Native", "metaData": "8:15::21","nativeKind":"[0](Field)","children":[
+            {"@type": "Identifier", "metaData": "8:15::21","name":"string"}
+          ]}
+        ]},"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "8:5::12","name":"doStuff"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "8:22:10:1","statementOrExpressions":[
+          {"@type": "Return", "metaData": "9:4::24","keyword":"9:4::10","body":
+            {"@type": "StringLiteral", "metaData": "9:11::24","value":"\"I do stuff!\"","content":"I do stuff!"}}
+        ]}},
+      {"@type": "FunctionDeclaration", "metaData": "12:0:14:1","returnType":
+        null,"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "12:5::13","name":"doPrint1"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "12:16:14:1","statementOrExpressions":[
+          {"@type": "Native", "metaData": "13:4::30","nativeKind":"[0](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "13:4::30","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "13:4::14","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "13:4::7","name":"log"},
+                {"@type": "Native", "metaData": "13:7::8"},
+                {"@type": "Identifier", "metaData": "13:8::14","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "13:14::15","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "13:15::29","nativeKind":"Args([]Expr)","children":[
+                {"@type": "StringLiteral", "metaData": "13:15::29","value":"\"Hello world!\"","content":"Hello world!"}
+              ]},
+              {"@type": "Native", "metaData": "13:29::30","nativeKind":"Rparen"}
+            ]}
+          ]}
+        ]}},
+      {"@type": "FunctionDeclaration", "metaData": "17:0:18:1","returnType":
+        null,"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "17:5::15","name":"noBodyFunc"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "17:17:18:1","statementOrExpressions":[]}},
+      {"@type": "FunctionDeclaration", "metaData": "21:0:23:1","returnType":
+        null,"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "21:5::27","name":"non_compliant_function"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "21:29:23:1","statementOrExpressions":[
+          {"@type": "Native", "metaData": "22:4::56","nativeKind":"[0](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "22:4::56","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "22:4::14","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "22:4::7","name":"log"},
+                {"@type": "Native", "metaData": "22:7::8"},
+                {"@type": "Identifier", "metaData": "22:8::14","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "22:14::15","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "22:15::55","nativeKind":"Args([]Expr)","children":[
+                {"@type": "StringLiteral", "metaData": "22:15::55","value":"\"This is a non compliant function in Go\"","content":"This is a non compliant function in Go"}
+              ]},
+              {"@type": "Native", "metaData": "22:55::56","nativeKind":"Rparen"}
+            ]}
+          ]}
+        ]}},
+      {"@type": "FunctionDeclaration", "metaData": "25:0:28:1","returnType":
+        null,"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "25:5::28","name":"doNonCompliantOperation"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "25:30:28:1","statementOrExpressions":[
+          {"@type": "Native", "metaData": "27:4::14","nativeKind":"[0](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "27:4::14","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Identifier", "metaData": "27:4::12","name":"doPrint1"},
+              {"@type": "Native", "metaData": "27:12::13","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "27:13::14","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "27:14::15","nativeKind":"Semicolon"},
+          {"@type": "Native", "metaData": "27:16::26","nativeKind":"[1](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "27:16::26","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Identifier", "metaData": "27:16::24","name":"doPrint1"},
+              {"@type": "Native", "metaData": "27:24::25","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "27:25::26","nativeKind":"Rparen"}
+            ]}
+          ]}
+        ]}},
+      {"@type": "FunctionDeclaration", "metaData": "30:0:33:1","returnType":
+        null,"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "30:5::11","name":"rename"},"modifiers":null,"isConstructor":false,"formalParameters":[
+        {"@type": "Parameter", "metaData": "30:12::23","type":
+          {"@type": "Identifier", "metaData": "30:17::23","name":"string"},"modifiers":null,"identifier":
+          {"@type": "Identifier", "metaData": "30:12::16","name":"name"},"defaultValue":null}
+      ],"body":
+        {"@type": "Block", "metaData": "30:25:33:1","statementOrExpressions":[
+          {"@type": "AssignmentExpression", "metaData": "32:4::15","statementOrExpression":
+            {"@type": "Identifier", "metaData": "32:11::15","name":"name"},"operator":"EQUAL","leftHandSide":
+            {"@type": "Identifier", "metaData": "32:4::8","name":"name"}}
+        ]}},
+      {"@type": "FunctionDeclaration", "metaData": "35:0:43:1","returnType":
+        {"@type": "Native", "metaData": "35:19::22","nativeKind":"Results(FieldList)","children":[
+          {"@type": "Native", "metaData": "35:19::22","nativeKind":"[0](Field)","children":[
+            {"@type": "Identifier", "metaData": "35:19::22","name":"int"}
+          ]}
+        ]},"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "35:5::16","name":"returnValue"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "35:23:43:1","statementOrExpressions":[
+          {"@type": "If", "metaData": "37:4:39:5","thenBranch":
+            {"@type": "Block", "metaData": "37:16:39:5","statementOrExpressions":[
+              {"@type": "Native", "metaData": "38:8::48","nativeKind":"[0](ExprStmt)","children":[
+                {"@type": "Native", "metaData": "38:8::48","nativeKind":"X(CallExpr)","children":[
+                  {"@type": "Native", "metaData": "38:8::18","nativeKind":"Fun(SelectorExpr)","children":[
+                    {"@type": "Identifier", "metaData": "38:8::11","name":"log"},
+                    {"@type": "Native", "metaData": "38:11::12"},
+                    {"@type": "Identifier", "metaData": "38:12::18","name":"Printf"}
+                  ]},
+                  {"@type": "Native", "metaData": "38:18::19","nativeKind":"Lparen"},
+                  {"@type": "Native", "metaData": "38:19::47","nativeKind":"Args([]Expr)","children":[
+                    {"@type": "StringLiteral", "metaData": "38:19::47","value":"\"Non Compliant If condition\"","content":"Non Compliant If condition"}
+                  ]},
+                  {"@type": "Native", "metaData": "38:47::48","nativeKind":"Rparen"}
+                ]}
+              ]}
+            ]},"ifKeyword":"37:4::6","elseKeyword":null,"elseBranch":
+            null,"condition":
+            {"@type": "ParenthesizedExpression", "metaData": "37:7::15","rightParenthesis":"37:14::15","leftParenthesis":"37:7::8","expression":
+              {"@type": "ParenthesizedExpression", "metaData": "37:8::14","rightParenthesis":"37:13::14","leftParenthesis":"37:8::9","expression":
+                {"@type": "Literal", "metaData": "37:9::13","value":"true"}}}},
+          {"@type": "Return", "metaData": "42:4::17","keyword":"42:4::10","body":
+            {"@type": "ParenthesizedExpression", "metaData": "42:11::17","rightParenthesis":"42:16::17","leftParenthesis":"42:11::12","expression":
+              {"@type": "ParenthesizedExpression", "metaData": "42:12::16","rightParenthesis":"42:15::16","leftParenthesis":"42:12::13","expression":
+                {"@type": "IntegerLiteral", "metaData": "42:13::15","value":"20"}}}}
+        ]}},
+      {"@type": "FunctionDeclaration", "metaData": "46:0:50:1","returnType":
+        null,"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "46:5::21","name":"redundentMessage"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "46:23:50:1","statementOrExpressions":[
+          {"@type": "Native", "metaData": "47:4::34","nativeKind":"[0](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "47:4::34","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "47:4::14","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "47:4::7","name":"log"},
+                {"@type": "Native", "metaData": "47:7::8"},
+                {"@type": "Identifier", "metaData": "47:8::14","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "47:14::15","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "47:15::33","nativeKind":"Args([]Expr)","children":[
+                {"@type": "StringLiteral", "metaData": "47:15::33","value":"\"Repeated message\"","content":"Repeated message"}
+              ]},
+              {"@type": "Native", "metaData": "47:33::34","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "48:4::34","nativeKind":"[1](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "48:4::34","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "48:4::14","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "48:4::7","name":"log"},
+                {"@type": "Native", "metaData": "48:7::8"},
+                {"@type": "Identifier", "metaData": "48:8::14","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "48:14::15","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "48:15::33","nativeKind":"Args([]Expr)","children":[
+                {"@type": "StringLiteral", "metaData": "48:15::33","value":"\"Repeated message\"","content":"Repeated message"}
+              ]},
+              {"@type": "Native", "metaData": "48:33::34","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "49:4::34","nativeKind":"[2](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "49:4::34","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "49:4::14","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "49:4::7","name":"log"},
+                {"@type": "Native", "metaData": "49:7::8"},
+                {"@type": "Identifier", "metaData": "49:8::14","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "49:14::15","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "49:15::33","nativeKind":"Args([]Expr)","children":[
+                {"@type": "StringLiteral", "metaData": "49:15::33","value":"\"Repeated message\"","content":"Repeated message"}
+              ]},
+              {"@type": "Native", "metaData": "49:33::34","nativeKind":"Rparen"}
+            ]}
+          ]}
+        ]}},
+      {"@type": "FunctionDeclaration", "metaData": "52:0:59:1","returnType":
+        null,"nativeChildren":[],"name":
+        {"@type": "Identifier", "metaData": "52:5::9","name":"main"},"modifiers":null,"isConstructor":false,"formalParameters":[],"body":
+        {"@type": "Block", "metaData": "52:12:59:1","statementOrExpressions":[
+          {"@type": "Native", "metaData": "53:1::41","nativeKind":"[0](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "53:1::41","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "53:1::11","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "53:1::4","name":"log"},
+                {"@type": "Native", "metaData": "53:4::5"},
+                {"@type": "Identifier", "metaData": "53:5::11","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "53:11::12","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "53:12::40","nativeKind":"Args([]Expr)","children":[
+                {"@type": "StringLiteral", "metaData": "53:12::40","value":"\"starting service sonar ...\"","content":"starting service sonar ..."}
+              ]},
+              {"@type": "Native", "metaData": "53:40::41","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "54:1::22","nativeKind":"[1](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "54:1::22","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "54:1::11","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "54:1::4","name":"log"},
+                {"@type": "Native", "metaData": "54:4::5"},
+                {"@type": "Identifier", "metaData": "54:5::11","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "54:11::12","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "54:12::21","nativeKind":"Args([]Expr)","children":[
+                {"@type": "Native", "metaData": "54:12::21","nativeKind":"[0](CallExpr)","children":[
+                  {"@type": "Identifier", "metaData": "54:12::19","name":"doStuff"},
+                  {"@type": "Native", "metaData": "54:19::20","nativeKind":"Lparen"},
+                  {"@type": "Native", "metaData": "54:20::21","nativeKind":"Rparen"}
+                ]}
+              ]},
+              {"@type": "Native", "metaData": "54:21::22","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "55:1::26","nativeKind":"[2](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "55:1::26","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Identifier", "metaData": "55:1::24","name":"doNonCompliantOperation"},
+              {"@type": "Native", "metaData": "55:24::25","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "55:25::26","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "56:1::19","nativeKind":"[3](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "56:1::19","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Identifier", "metaData": "56:1::7","name":"rename"},
+              {"@type": "Native", "metaData": "56:7::8","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "56:8::18","nativeKind":"Args([]Expr)","children":[
+                {"@type": "StringLiteral", "metaData": "56:8::18","value":"\"Jhon Doe\"","content":"Jhon Doe"}
+              ]},
+              {"@type": "Native", "metaData": "56:18::19","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "57:1::25","nativeKind":"[4](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "57:1::25","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Identifier", "metaData": "57:1::23","name":"non_compliant_function"},
+              {"@type": "Native", "metaData": "57:23::24","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "57:24::25","nativeKind":"Rparen"}
+            ]}
+          ]},
+          {"@type": "Native", "metaData": "58:1::40","nativeKind":"[5](ExprStmt)","children":[
+            {"@type": "Native", "metaData": "58:1::40","nativeKind":"X(CallExpr)","children":[
+              {"@type": "Native", "metaData": "58:1::11","nativeKind":"Fun(SelectorExpr)","children":[
+                {"@type": "Identifier", "metaData": "58:1::4","name":"log"},
+                {"@type": "Native", "metaData": "58:4::5"},
+                {"@type": "Identifier", "metaData": "58:5::11","name":"Printf"}
+              ]},
+              {"@type": "Native", "metaData": "58:11::12","nativeKind":"Lparen"},
+              {"@type": "Native", "metaData": "58:12::39","nativeKind":"Args([]Expr)","children":[
+                {"@type": "Native", "metaData": "58:12::39","nativeKind":"[0](CallExpr)","children":[
+                  {"@type": "Native", "metaData": "58:12::24","nativeKind":"Fun(SelectorExpr)","children":[
+                    {"@type": "Identifier", "metaData": "58:12::19","name":"strconv"},
+                    {"@type": "Native", "metaData": "58:19::20"},
+                    {"@type": "Identifier", "metaData": "58:20::24","name":"Itoa"}
+                  ]},
+                  {"@type": "Native", "metaData": "58:24::25","nativeKind":"Lparen"},
+                  {"@type": "Native", "metaData": "58:25::38","nativeKind":"Args([]Expr)","children":[
+                    {"@type": "Native", "metaData": "58:25::38","nativeKind":"[0](CallExpr)","children":[
+                      {"@type": "Identifier", "metaData": "58:25::36","name":"returnValue"},
+                      {"@type": "Native", "metaData": "58:36::37","nativeKind":"Lparen"},
+                      {"@type": "Native", "metaData": "58:37::38","nativeKind":"Rparen"}
+                    ]}
+                  ]},
+                  {"@type": "Native", "metaData": "58:38::39","nativeKind":"Rparen"}
+                ]}
+              ]},
+              {"@type": "Native", "metaData": "58:39::40","nativeKind":"Rparen"}
+            ]}
+          ]}
+        ]}}
+    ]}
+} 
+
