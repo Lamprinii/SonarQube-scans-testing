@@ -194,7 +194,7 @@ go test -json > test-report.json
 
 ## Initiating the debug from the scanner side:
 
-### From sonar scanner (Recommended for non compiled languages)
+### From sonar scanner cli (Recommended for non compiled languages)
 
 1. set the following sonar env variable with the debug option:
 
@@ -222,10 +222,31 @@ gradlew sonar -Dorg.gradle.debug=true --no-daemon -Dorg.gradle.debug.port=8000
 
 2. Click the debug icon, to start debugging
 
-## Initiating the debug from the web server side:
+## Initiating a debug for the scanner:
 
-- Steps to be added
+### For sonar scanner cli:
 
-## Initiating the debug from the compute engine side:
+1. Clone the relevant sonar scanner version from [here](https://github.com/SonarSource/sonar-scanner-cli)
 
-- Steps to be added
+2. set following env variable for debug option
+
+```cmd
+set SONAR_SCANNER_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000"
+```
+
+3. Run the sonar-scanner
+
+### For sonar scanner for gradle:
+
+1. Clone the relevant sonar scanner version from [here](https://github.com/SonarSource/sonar-scanner-gradle)
+
+2. Execute the following command
+
+```cmd
+gradlew sonar -Dorg.gradle.debug=true --no-daemon -Dorg.gradle.debug.port=8000
+```
+
+### Setting up debug points in the scanners:
+1. Create a breakpoint in the required java project class file with a java remote debug configuration set up
+
+2. Click the debug icon, to start debugging
