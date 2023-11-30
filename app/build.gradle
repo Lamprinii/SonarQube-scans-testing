@@ -32,10 +32,10 @@ sourceSets {
 // Setting the properties required to perform sonarqube analysis using 'gradlew sonar'
 sonar {
     properties {
-        property('sonar.projectName', 'sonarqube-kotlin-project')
-        property("sonar.projectKey", 'sonarqube-kotlin-project')
+        property('sonar.projectName', 'sonarqube-ballerina-testing')
+        property("sonar.projectKey", 'sonarqube-ballerina-testing')
         property("sonar.host.url", "http://localhost:9000")
-        property("sonar.login", "sqp_e12d7f7d420495555679aaafa05e3c5f39800d3c")
+        property("sonar.login", "sqp_e49cb35d4d4bcbedc37e5d165a3544c3fbc349a0")
     }
 }
 

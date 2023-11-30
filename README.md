@@ -3,7 +3,7 @@
 - First generate a sonarqube token to make a project analyzable
 
 ```text
-SONARQUBE_TOKEN: sqp_e12d7f7d420495555679aaafa05e3c5f39800d3c
+SONARQUBE_TOKEN: sqp_e49cb35d4d4bcbedc37e5d165a3544c3fbc349a0
 ```
 
 - Replace the places mentioned as SONARQUBE_TOKEN with the actual token in the following guide
@@ -22,7 +22,7 @@ plugins {
 
 ```cmd
 ./gradlew sonar
-  -Dsonar.projectKey=sonarqube-kotlin-project
+  -Dsonar.projectKey=sonarqube-ballerina-testing
   -Dsonar.host.url=http://localhost:9000
   -Dsonar.token=SONARQUBE_TOKEN
 ```
@@ -32,7 +32,7 @@ plugins {
 ```build.gradle
 sonar {
     properties {
-        property("sonar.projectKey", "sonarqube-kotlin-project")
+        property("sonar.projectKey", "sonarqube-ballerina-testing")
         property("sonar.host.url", "http://localhost:9000")
     }
 }
@@ -70,7 +70,7 @@ gradlew sonar
    project
 
 ```properties
-sonar.projectKey=sonarqube-kotlin-project
+sonar.projectKey=sonarqube-ballerina-testing
 sonar.sources=.
 sonar.host.url=http://localhost:9000
 sonar.login=SONARQUBE_TOKEN

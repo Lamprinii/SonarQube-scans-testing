@@ -15,3 +15,10 @@ function someFunction4() {
     string checkpanicTester = "checkpanic";
     string 'checkpanic = "";
 }
+
+function emptyFunction1(){
+}
+
+
+function emptyFunction2(){
+}

@@ -1,0 +1,6 @@
+projectKey=sonarqube-ballerina-testing
+serverUrl=http://localhost:9000
+serverVersion=9.9.2.77730
+dashboardUrl=http://localhost:9000/dashboard?id=sonarqube-ballerina-testing
+ceTaskId=AYwMwzzoq1AVTU4hyXWS
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYwMwzzoq1AVTU4hyXWS
