@@ -29,5 +29,8 @@ function afterSuiteFunc() {
     io:println("I'm the after suite function!");
 }
 
-public function emptyModuleTestFunction() {
+public function emptyMainModuleTestFunction() {
+}
+
+public function emptyMainModuleTestFunction2() {
 }

@@ -20,6 +20,22 @@ public function checkPanicFunction() {
     io:println(checkpanicVariable);
 }
 
+// Checkpanic function
+public function checkPanicFunction2() {
+    string checkpanicVariable = checkpanic tooManyParamsFunction("param1",
+                                                    "param2",
+                                                    "param3",
+                                                    "param4",
+                                                    "param5",
+                                                    "param6",
+                                                    "param7",
+                                                    "param8");
+
+    checkpanicVariable = "checkpanic";
+
+    io:println(checkpanicVariable);
+}
+
 // Greater than 7 parameters function
 public function tooManyParamsFunction(string param1,
         string param2,

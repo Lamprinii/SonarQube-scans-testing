@@ -11,3 +11,6 @@ public function hello(string name) returns string {
 
 public function emptyModuleFunction() {
 }
+
+public function emptyMainModuleTestFunction2() {
+}

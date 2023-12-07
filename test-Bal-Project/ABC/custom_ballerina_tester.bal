@@ -1,3 +1,13 @@
+// =====
+// NOTES
+// =====
+// Bal scan should work exactly like the bal build command
+// in that since bal build does not pick up this file when "bal build" is executed
+// bal scan should not pick up this file when "bal scan" is executed
+// in a project containing multiple single bal files bal build fails
+// similarly "bal scan" should not attempt to scan single file projects
+// bal build builds when a sinle bal file is passed as an argument
+// similarly "bal scan" should scan when a single bal file is passed as an argument
 import ballerina/io;
 
 // Empty function
@@ -6,7 +16,7 @@ public function emptyCustomFunction() {
 
 // Checkpanic function
 public function checkPanicFunction() {
-    string checkpanicVariable = checkpanic tooManyParamsFunction("param1",
+    string value = checkpanic tooManyParamsFunction("param1",
                                                     "param2",
                                                     "param3",
                                                     "param4",
@@ -15,9 +25,7 @@ public function checkPanicFunction() {
                                                     "param7",
                                                     "param8");
 
-    checkpanicVariable = "checkpanic";
-
-    io:println(checkpanicVariable);
+    io:println(value);
 }
 
 // Greater than 7 parameters function

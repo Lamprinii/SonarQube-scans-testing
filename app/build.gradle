@@ -35,7 +35,7 @@ sonar {
         property('sonar.projectName', 'sonarqube-ballerina-testing')
         property("sonar.projectKey", 'sonarqube-ballerina-testing')
         property("sonar.host.url", "http://localhost:9000")
-        property("sonar.login", "sqp_e49cb35d4d4bcbedc37e5d165a3544c3fbc349a0")
+        property("sonar.login", "sqp_ab3d5a0eb6afe219462f3876b146ab9d6d6602c8")
     }
 }
 

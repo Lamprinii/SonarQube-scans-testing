@@ -3,7 +3,7 @@
 - First generate a sonarqube token to make a project analyzable
 
 ```text
-SONARQUBE_TOKEN: sqp_e49cb35d4d4bcbedc37e5d165a3544c3fbc349a0
+SONARQUBE_TOKEN: sqp_ab3d5a0eb6afe219462f3876b146ab9d6d6602c8
 ```
 
 - Replace the places mentioned as SONARQUBE_TOKEN with the actual token in the following guide
@@ -245,6 +245,10 @@ set SONAR_SCANNER_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,ad
 ```cmd
 gradlew sonar -Dorg.gradle.debug=true --no-daemon -Dorg.gradle.debug.port=8000
 ```
+
+3. It's possible to keep the execution reports of an analysis in a folder without deleting them with the following
+property
+// sonar.scanner.keepReport=true
 
 ### Setting up debug points in the scanners:
 1. Create a breakpoint in the required java project class file with a java remote debug configuration set up

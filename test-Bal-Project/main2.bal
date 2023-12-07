@@ -1,12 +1,12 @@
 import ballerina/io;
 
 // Empty function
-public function emptyCustomFunction() {
+public function emptyCustomFunction2() {
 }
 
 // Checkpanic function
-public function checkPanicFunction() {
-    string checkpanicVariable = checkpanic tooManyParamsFunction("param1",
+public function checkPanicFunction2() {
+    string checkpanicVariable = checkpanic tooManyParamsFunction2("param1",
                                                     "param2",
                                                     "param3",
                                                     "param4",
@@ -21,7 +21,7 @@ public function checkPanicFunction() {
 }
 
 // Greater than 7 parameters function
-public function tooManyParamsFunction(string param1,
+public function tooManyParamsFunction2(string param1,
         string param2,
         string param3,
         string param4,
