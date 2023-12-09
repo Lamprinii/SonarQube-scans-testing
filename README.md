@@ -53,14 +53,14 @@ gradlew sonar
 
 ## Notes regarding the gradle application plugin
 
-1. this plugin automatically sets up the sonar properties required to
+1. This plugin automatically sets up the sonar properties required to
    do a proper analysis of code and send the results to the sonarQube server
 
-2. without this plugin no scanning will work on its own
+2. This plugin is required to perform analysis on compiled languages
 
-3. once executed, sonar scanner temporarily creates an analysis log that contains details
-   of the scanners that are already coming ready with it, these analysers are the ones
-   responsible for generating the reports that are then sent to sonarQube
+3. Once executed, sonar scanner temporarily creates an analysis log in the .scannerwork directory
+   that contains details of the scanners that are already coming ready with it, these analysers are
+   the ones responsible for generating the reports that are then sent to sonarQube
 
 # Utilizing the Sonar Scanner for performing analysis
 
@@ -132,16 +132,9 @@ gradlew sonar
 
 ## For Golang source files:
 
-1. We cannot use the sonar scanner for gradle
+1. Perform the sonar scan through any sonar-scanner CLI
 
-2. We can only use the sonar-scanner approach for performing scans for Go Projects
-
-3. This is because the gradle sonar scanner is unable to include go projects even when defined in the settings.gradle
-   file
-
-4. Run the sonar scanner
-
-5. No further actions are required, and analysis results will be visible in SonarQube
+2. The analysis will be taken care of automatically without any further steps
 
 ### Inclusion of test and coverage reports for Go:
 
@@ -180,13 +173,9 @@ go test -coverprofile=coverage.out
 go test -json > test-report.json
 ```
 
-## For Ruby source files:
-
-- To be tested
-
 ## For JS/Python source files:
 
-1. Perform the sonar scan through any of the scanners provided (i.e: sonar scanner for gradle)
+1. Perform the sonar scan through any sonar-scanner CLI
 
 2. The analysis will be taken care of automatically without any further steps
 
@@ -194,7 +183,7 @@ go test -json > test-report.json
 
 ## Initiating the debug from the scanner side:
 
-### From sonar scanner cli (Recommended for non compiled languages)
+### From sonar scanner cli (Suitable for non compiled languages)
 
 1. set the following sonar env variable with the debug option:
 
@@ -246,8 +235,8 @@ set SONAR_SCANNER_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,ad
 gradlew sonar -Dorg.gradle.debug=true --no-daemon -Dorg.gradle.debug.port=8000
 ```
 
-3. It's possible to keep the execution reports of an analysis in a folder without deleting them with the following
-property
+3. It's possible to keep the execution reports of an analysis in the .scannerwork directory without deleting
+them with the following property
 // sonar.scanner.keepReport=true
 
 ### Setting up debug points in the scanners:
