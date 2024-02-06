@@ -6,3 +6,13 @@ distribution = "2201.8.2"
 
 [build-options]
 observabilityIncluded = true
+
+# For having custom scans included (Disabled as it's available in the central bala folder)
+#[[dependency]]
+#version="0.1.0"
+#org = "tharana_wanigaratne"
+#name = "compiler_plugin_customRules"
+#repository="local"
+
+[scan]
+configPath="Scan.toml"

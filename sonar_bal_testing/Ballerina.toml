@@ -6,3 +6,10 @@ distribution = "2201.8.2"
 
 [build-options]
 observabilityIncluded = true
+
+# For custom rules analysis with Ballerina Scan Tool
+#[[dependency]]
+#version="0.1.0"
+#org = "tharana_wanigaratne"
+#name = "compiler_plugin_customRules"
+#repository="local"

@@ -1,4 +1,6 @@
 import ballerina/io;
+// For testing the custom compiler plugin
+import tharana_wanigaratne/compiler_plugin_customRules as _;
 
 // Empty function
 public function emptyCustomFunction() {

@@ -1,5 +1,10 @@
 import ballerina/io;
 
+// For having custom scans included (To be used with bal scan tool)
+// import tharana_wanigaratne/compiler_plugin_customRules as _;
+// For having custom scans included (To be used with bal bridge tool)
+import tharana_wanigaratne/custom_compiler_plugin as _;
+
 // Empty function
 public function emptyCustomFunction() {
 }

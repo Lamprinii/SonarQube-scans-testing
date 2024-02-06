@@ -1,0 +1,192 @@
+[
+  {
+    "startLine": 31,
+    "startLineOffset": 46,
+    "endLine": 32,
+    "endLineOffset": 46,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\tests\\main_module_tests.bal"
+  },
+  {
+    "startLine": 5,
+    "startLineOffset": 38,
+    "endLine": 6,
+    "endLineOffset": 38,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main.bal"
+  },
+  {
+    "startLine": 3,
+    "startLineOffset": 39,
+    "endLine": 4,
+    "endLineOffset": 39,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main2.bal"
+  },
+  {
+    "startLine": 31,
+    "startLineOffset": 42,
+    "endLine": 32,
+    "endLineOffset": 42,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\modules\\module1\\tests\\lib_test.bal"
+  },
+  {
+    "startLine": 11,
+    "startLineOffset": 38,
+    "endLine": 12,
+    "endLineOffset": 38,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\modules\\module1\\module1.bal"
+  },
+  {
+    "startLine": 9,
+    "startLineOffset": 37,
+    "endLine": 22,
+    "endLineOffset": 1,
+    "ruleID": "S108",
+    "message": "This function has 1 occurrences of checkpanic keyword. Please consider using the check keyword instead!",
+    "issueType": "CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main.bal"
+  },
+  {
+    "startLine": 25,
+    "startLineOffset": 37,
+    "endLine": 32,
+    "endLineOffset": 43,
+    "ruleID": "S107",
+    "message": "This function has 8 parameters, which is greater than the 7 authorized.",
+    "issueType": "CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main.bal"
+  },
+  {
+    "startLine": 31,
+    "startLineOffset": 46,
+    "endLine": 32,
+    "endLineOffset": 46,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\tests\\main_module_tests.bal"
+  },
+  {
+    "startLine": 5,
+    "startLineOffset": 38,
+    "endLine": 6,
+    "endLineOffset": 38,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main.bal"
+  },
+  {
+    "startLine": 3,
+    "startLineOffset": 39,
+    "endLine": 4,
+    "endLineOffset": 39,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main2.bal"
+  },
+  {
+    "startLine": 31,
+    "startLineOffset": 42,
+    "endLine": 32,
+    "endLineOffset": 42,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\modules\\module1\\tests\\lib_test.bal"
+  },
+  {
+    "startLine": 11,
+    "startLineOffset": 38,
+    "endLine": 12,
+    "endLineOffset": 38,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\modules\\module1\\module1.bal"
+  },
+  {
+    "startLine": 7,
+    "startLineOffset": 38,
+    "endLine": 20,
+    "endLineOffset": 1,
+    "ruleID": "S108",
+    "message": "This function has 1 occurrences of checkpanic keyword. Please consider using the check keyword instead!",
+    "issueType": "CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main2.bal"
+  },
+  {
+    "startLine": 23,
+    "startLineOffset": 38,
+    "endLine": 30,
+    "endLineOffset": 43,
+    "ruleID": "S107",
+    "message": "This function has 8 parameters, which is greater than the 7 authorized.",
+    "issueType": "CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main2.bal"
+  },
+  {
+    "startLine": 31,
+    "startLineOffset": 46,
+    "endLine": 32,
+    "endLineOffset": 46,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\tests\\main_module_tests.bal"
+  },
+  {
+    "startLine": 5,
+    "startLineOffset": 38,
+    "endLine": 6,
+    "endLineOffset": 38,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main.bal"
+  },
+  {
+    "startLine": 3,
+    "startLineOffset": 39,
+    "endLine": 4,
+    "endLineOffset": 39,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\main2.bal"
+  },
+  {
+    "startLine": 31,
+    "startLineOffset": 42,
+    "endLine": 32,
+    "endLineOffset": 42,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\modules\\module1\\tests\\lib_test.bal"
+  },
+  {
+    "startLine": 11,
+    "startLineOffset": 38,
+    "endLine": 12,
+    "endLineOffset": 38,
+    "ruleID": "S109",
+    "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+    "issueType": "CUSTOM_CHECK_VIOLATION",
+    "reportedFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\modules\\module1\\module1.bal"
+  }
+]

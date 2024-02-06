@@ -14,3 +14,6 @@ public function emptyModuleFunction() {
 
 public function emptyMainModuleTestFunction2() {
 }
+
+public function emptyMainModuleTestFunction3() {
+}

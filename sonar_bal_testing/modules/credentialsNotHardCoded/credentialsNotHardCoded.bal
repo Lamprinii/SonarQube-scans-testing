@@ -34,3 +34,4 @@ public function compliantSolution2() {
 
     io:println("Hashed string: " + hashedString.toString());
 }
+

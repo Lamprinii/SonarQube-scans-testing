@@ -20,16 +20,18 @@ Bundled analyzers:
   - Configuration detection fot Code Quality and Security 1.2.0.267 (config)
 Global server settings:
   - sonar.core.id=147B411E-AYw-Z6ju0DQgyGfUxbh0
-  - sonar.core.startTime=2023-12-07T16:51:05+0530
+  - sonar.core.startTime=2023-12-28T20:36:17+0530
   - sonar.forceAuthentication=true
   - sonar.plugins.risk.consent=ACCEPTED
 Project server settings:
 Project scanner properties:
+  - sonar.exclusions='**/*.java,**/*.xml,**/*.yaml,**/*.go,**/*.kt,**/*.js,**/*.html,**/*.YAML,**/*.rb,**/*.scala,**/*.py'
   - sonar.host.url=http://localhost:9000
   - sonar.login=******
-  - sonar.projectBaseDir=C:\Users\Tharana Wanigaratne\Desktop\BalWorkFile\SonarQube-scans-testing\standalone-ballerina-project
-  - sonar.projectKey=standalone-ballerina-project
+  - sonar.projectBaseDir=C:\Users\Tharana Wanigaratne\Desktop\BalWorkFile\SonarQube-scans-testing
+  - sonar.projectKey=sonarqube-ballerina-testing
   - sonar.scanner.app=ScannerCLI
   - sonar.scanner.appVersion=5.0.1.3006
   - sonar.sourceEncoding=windows-1252
-  - sonar.working.directory=C:\Users\Tharana Wanigaratne\Desktop\BalWorkFile\SonarQube-scans-testing\standalone-ballerina-project\.scannerwork
+  - sonar.sources=.
+  - sonar.working.directory=C:\Users\Tharana Wanigaratne\Desktop\BalWorkFile\SonarQube-scans-testing\.scannerwork

@@ -6,3 +6,9 @@ distribution = "2201.7.2"
 
 [build-options]
 observabilityIncluded = true
+
+[[dependency]]
+version="0.1.0"
+org = "tharana_wanigaratne"
+name = "compiler_plugin_customRules"
+repository="local"

@@ -1,0 +1,34 @@
+[
+  {
+    "ballerinaFilePath": "C:\\Users\\Tharana Wanigaratne\\Desktop\\BalWorkFile\\SonarQube-scans-testing\\test-Bal-Project\\ABC\\custom_ballerina_tester.bal",
+    "reportedIssues": [
+      {
+        "startLine": 13,
+        "startLineOffset": 38,
+        "endLine": 14,
+        "endLineOffset": 1,
+        "ruleID": "S109",
+        "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+        "issueType": "CUSTOM_CHECK_VIOLATION"
+      },
+      {
+        "startLine": 17,
+        "startLineOffset": 37,
+        "endLine": 28,
+        "endLineOffset": 1,
+        "ruleID": "S108",
+        "message": "This function has 1 occurrences of checkpanic keyword. Please consider using the check keyword instead!",
+        "issueType": "CHECK_VIOLATION"
+      },
+      {
+        "startLine": 31,
+        "startLineOffset": 37,
+        "endLine": 38,
+        "endLineOffset": 43,
+        "ruleID": "S107",
+        "message": "This function has 8 parameters, which is greater than the 7 authorized.",
+        "issueType": "CHECK_VIOLATION"
+      }
+    ]
+  }
+]
