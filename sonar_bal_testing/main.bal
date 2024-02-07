@@ -18,7 +18,8 @@
 // Request redirection forging rule testing
 // import sonar_bal_testing.requestRedirectionForging as _;
 // import sonar_bal_testing.sensitiveSystemCommandArguments as _;
-import sonar_bal_testing.sensitiveEnumaration as _;
+// import sonar_bal_testing.sensitiveEnumaration as _;
+import sonar_bal_testing.requestWithExcessiveContent as _;
 
 // ============================
 // Ballerina Non service checks
