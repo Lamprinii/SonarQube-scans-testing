@@ -1,25 +1,22 @@
 // ================================
 // Ballerina Service related checks
 // ================================
-// Insecure endpoint rule testing
 // import sonar_bal_testing.insecureEndpoint as _;
-// SQL Database injection rule testing
 // import sonar_bal_testing.sqlInjection as _;
-// NoSQL Database injection rule testing
 // import sonar_bal_testing.noSQLInjection as _;
-// Filepath injection rule testing
 // import sonar_bal_testing.functionPathInjection as _;
-// Server side request forgery rule testing
 // import sonar_bal_testing.serverSideRequestForgery as _;
-// Security sensitive HTTP request rule testing
 // import sonar_bal_testing.securitySensitiveHttpRequest as _;
-// Dynamic code injection rule testing
-// import sonar_bal_testing.requestRedirectionForging as _;
-// Request redirection forging rule testing
 // import sonar_bal_testing.requestRedirectionForging as _;
 // import sonar_bal_testing.sensitiveSystemCommandArguments as _;
 // import sonar_bal_testing.sensitiveEnumaration as _;
-import sonar_bal_testing.requestWithExcessiveContent as _;
+// import sonar_bal_testing.requestWithExcessiveContent as _;
+// import sonar_bal_testing.disclosingFingerprints as _;
+// import sonar_bal_testing.autoEscapeDisabledTemplateRendering as _;
+// import sonar_bal_testing.permissiveCORS as _;
+// import sonar_bal_testing.httpSensitiveCookies as _;
+// import sonar_bal_testing.secureFlagSensitiveCookies as _;
+import sonar_bal_testing.plainTextPasswordSaving as _;
 
 // ============================
 // Ballerina Non service checks
@@ -32,6 +29,8 @@ import sonar_bal_testing.requestWithExcessiveContent as _;
 // import sonar_bal_testing.weakHashingAlgorithms;
 // import sonar_bal_testing.insecureDBConnection;
 // import sonar_bal_testing.publicWritableDirectories;
+// import sonar_bal_testing.osCommandsInPath;
+// import sonar_bal_testing.securitySensitiveHardCodedIPs;
 
 // For engaging custom rules compiler plugin [bal scan tool] (Only enable when performing static code analysis)
 // import tharana_wanigaratne/compiler_plugin_customRules as _;
@@ -43,11 +42,13 @@ public function main() {
     // ==============================
     // Other Ballerina related checks
     // ==============================
-    // int result = tooManyParameters:checkRule(1, 2, 3, 4, 5, 6, 7, 8);
+    // tooManyParameters:checkRule();
     // panicChecker:checkRule();
     // emptyFunction:checkRule();
     // credentialsNotHardCoded:checkRule();
     // weakHashingAlgorithms:checkRule();
     // insecureDBConnection:connectToDatabase();
     // publicWritableDirectories:checkRule();
+    // osCommandsInPath:checkRule();
+    // securitySensitiveHardCodedIPs:checkRule();
 }

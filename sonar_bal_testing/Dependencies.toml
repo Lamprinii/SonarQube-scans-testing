@@ -5,7 +5,7 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.8.4-SNAPSHOT"
+distribution-version = "2201.8.5"
 
 [[package]]
 org = "ballerina"
@@ -66,8 +66,37 @@ modules = [
 
 [[package]]
 org = "ballerina"
+name = "graphql"
+version = "1.10.1"
+dependencies = [
+	{org = "ballerina", name = "auth"},
+	{org = "ballerina", name = "file"},
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "jwt"},
+	{org = "ballerina", name = "lang.array"},
+	{org = "ballerina", name = "lang.regexp"},
+	{org = "ballerina", name = "lang.value"},
+	{org = "ballerina", name = "log"},
+	{org = "ballerina", name = "mime"},
+	{org = "ballerina", name = "oauth2"},
+	{org = "ballerina", name = "task"},
+	{org = "ballerina", name = "time"},
+	{org = "ballerina", name = "uuid"},
+	{org = "ballerina", name = "websocket"}
+]
+modules = [
+	{org = "ballerina", packageName = "graphql", moduleName = "graphql"},
+	{org = "ballerina", packageName = "graphql", moduleName = "graphql.dataloader"},
+	{org = "ballerina", packageName = "graphql", moduleName = "graphql.parser"},
+	{org = "ballerina", packageName = "graphql", moduleName = "graphql.subgraph"}
+]
+
+[[package]]
+org = "ballerina"
 name = "http"
-version = "2.10.6"
+version = "2.10.7"
 dependencies = [
 	{org = "ballerina", name = "auth"},
 	{org = "ballerina", name = "cache"},
@@ -221,9 +250,6 @@ dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "lang.int"}
 ]
-modules = [
-	{org = "ballerina", packageName = "mime", moduleName = "mime"}
-]
 
 [[package]]
 org = "ballerina"
@@ -256,6 +282,30 @@ dependencies = [
 ]
 modules = [
 	{org = "ballerina", packageName = "os", moduleName = "os"}
+]
+
+[[package]]
+org = "ballerina"
+name = "random"
+version = "1.5.0"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "time"}
+]
+modules = [
+	{org = "ballerina", packageName = "random", moduleName = "random"}
+]
+
+[[package]]
+org = "ballerina"
+name = "regex"
+version = "1.4.3"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "lang.string"}
+]
+modules = [
+	{org = "ballerina", packageName = "regex", moduleName = "regex"}
 ]
 
 [[package]]
@@ -295,6 +345,40 @@ name = "url"
 version = "2.4.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
+]
+
+[[package]]
+org = "ballerina"
+name = "uuid"
+version = "1.7.0"
+dependencies = [
+	{org = "ballerina", name = "crypto"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "lang.int"},
+	{org = "ballerina", name = "time"}
+]
+
+[[package]]
+org = "ballerina"
+name = "websocket"
+version = "2.10.1"
+dependencies = [
+	{org = "ballerina", name = "auth"},
+	{org = "ballerina", name = "constraint"},
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "jwt"},
+	{org = "ballerina", name = "lang.array"},
+	{org = "ballerina", name = "lang.runtime"},
+	{org = "ballerina", name = "lang.string"},
+	{org = "ballerina", name = "lang.value"},
+	{org = "ballerina", name = "log"},
+	{org = "ballerina", name = "oauth2"},
+	{org = "ballerina", name = "time"}
+]
+modules = [
+	{org = "ballerina", packageName = "websocket", moduleName = "websocket"}
 ]
 
 [[package]]
@@ -351,11 +435,14 @@ version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "crypto"},
 	{org = "ballerina", name = "file"},
+	{org = "ballerina", name = "graphql"},
 	{org = "ballerina", name = "http"},
 	{org = "ballerina", name = "io"},
-	{org = "ballerina", name = "mime"},
 	{org = "ballerina", name = "os"},
+	{org = "ballerina", name = "random"},
+	{org = "ballerina", name = "regex"},
 	{org = "ballerina", name = "sql"},
+	{org = "ballerina", name = "websocket"},
 	{org = "ballerinai", name = "observe"},
 	{org = "ballerinax", name = "mongodb"},
 	{org = "ballerinax", name = "mysql"},
@@ -363,16 +450,24 @@ dependencies = [
 ]
 modules = [
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.autoEscapeDisabledTemplateRendering"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.credentialsNotHardCoded"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.disclosingFingerprints"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.emptyFunction"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.functionPathInjection"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.httpSensitiveCookies"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.insecureDBConnection"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.insecureEndpoint"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.noSQLInjection"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.osCommandsInPath"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.panicChecker"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.permissiveCORS"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.plainTextPasswordSaving"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.publicWritableDirectories"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.requestRedirectionForging"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.requestWithExcessiveContent"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.secureFlagSensitiveCookies"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.securitySensitiveHardCodedIPs"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.securitySensitiveHttpRequest"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.sensitiveEnumaration"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.sensitiveSystemCommandArguments"},

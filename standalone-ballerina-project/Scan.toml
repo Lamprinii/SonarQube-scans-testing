@@ -1,4 +1,12 @@
 [[platform]]
 name = "sonarqube"
-path = "C:\\Users\\Tharana Wanigaratne\\Desktop\\sonar-ballerina\\sonarqube-platform-plugin\\build\\libs\\sonarqube-platform-plugin-1.0.jar"
-sonarProjectPropertiesPath = "sonar-project.properties"
+#path = "C:\\Users\\Tharana Wanigaratne\\Desktop\\sonar-ballerina\\sonarqube-platform-plugin\\build\\libs\\sonarqube-platform-plugin-1.0.jar"
+#sonarProjectPropertiesPath = "sonar-project.properties"
+
+[[plugin]]
+org = "tharana_wanigaratne"
+name = "compiler_plugin_customRules"
+version = "0.1.0"
+
+[rule]
+ids = "S107, S108"

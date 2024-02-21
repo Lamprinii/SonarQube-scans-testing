@@ -3,15 +3,15 @@ import ballerina/http;
 listener http:Listener endpoint = new (8080);
 
 // Noncompliant
-service / on endpoint {
-    resource function get doGet(http:Caller caller, string url) returns error? {
-        http:Response response = new http:Response();
+// service / on endpoint {
+//     resource function get doGet(http:Caller caller, string url) returns error? {
+//         http:Response response = new http:Response();
 
-        // Noncompliant
-        string[] redirectUrls = [url];
-        check caller->redirect(response, http:REDIRECT_FOUND_302, redirectUrls);
-    }
-};
+//         // Noncompliant
+//         string[] redirectUrls = [url];
+//         check caller->redirect(response, http:REDIRECT_FOUND_302, redirectUrls);
+//     }
+// };
 
 // // Compliant
 // service / on endpoint {
@@ -26,22 +26,23 @@ service / on endpoint {
 //     }
 // };
 
-// // Compliant
-// service / on endpoint {
-//     resource function get doGet(http:Caller caller, string url) returns error? {
-//         http:Response response = new http:Response();
+// Compliant
+service / on endpoint {
+    resource function get doGet(http:Caller caller, string url) returns error? {
+        http:Response response = new http:Response();
 
-//         // Compliant
-//         string[] allowedHosts = [];
-//         allowedHosts.push("http://trusted1.example.com");
-//         allowedHosts.push("http://trusted2.example.com");
-//         boolean hostIsSecure = allowedHosts.some(allowedHost =>
-//             allowedHost.equalsIgnoreCaseAscii(url)
-//         );
+        // Compliant
+        string[] allowedHosts = [
+            "http://trusted1.example.com",
+            "http://trusted2.example.com"
+            ];
+        boolean hostIsSecure = allowedHosts.some(allowedHost =>
+            allowedHost.equalsIgnoreCaseAscii(url)
+        );
 
-//         if hostIsSecure {
-//             string[] redirectUrls = [url];
-//             check caller->redirect(response, http:REDIRECT_FOUND_302, redirectUrls);
-//         }
-//     }
-// };
+        if hostIsSecure {
+            string[] redirectUrls = [url];
+            check caller->redirect(response, http:REDIRECT_FOUND_302, redirectUrls);
+        }
+    }
+};
