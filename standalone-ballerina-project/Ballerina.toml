@@ -15,4 +15,5 @@ observabilityIncluded = true
 #repository="local"
 
 [scan]
+#configPath="https://raw.githubusercontent.com/Xenowa/ballerina-scan-tool/main/ScanCommand/bal-scan-tool-tester/Scan.toml"
 configPath="Scan.toml"

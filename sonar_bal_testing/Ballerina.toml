@@ -11,7 +11,7 @@ observabilityIncluded = true
 #[[dependency]]
 #version="0.1.0"
 #org = "tharana_wanigaratne"
-#name = "compiler_plugin_customRules"
+# name = "custom_static_code_analyzer"
 #repository="local"
 
 # For plain text password saving rule testing

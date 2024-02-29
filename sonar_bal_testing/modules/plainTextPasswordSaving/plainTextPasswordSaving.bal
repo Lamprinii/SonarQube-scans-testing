@@ -1,14 +1,14 @@
 import ballerina/crypto;
 import ballerina/http;
-// import ballerina/lang.array;
+import ballerina/lang.array;
 import ballerina/random;
-// import ballerina/sql;
-// import ballerinax/java.jdbc; // for JDBC operations, driver should be added to Ballerina.toml
-// import ballerinax/mysql; // for MYSQL operations
-// import ballerinax/mysql.driver as _; // for MYSQL operations
+import ballerina/sql;
 // import ballerinax/postgresql; // For PostgreSQL operations
 // import ballerinax/postgresql.driver as _; // for PostgreSQL operations
-import ballerinax/mongodb; // For MongoDB operations
+// import ballerinax/mongodb; // For MongoDB operations
+// import ballerinax/java.jdbc; // for JDBC operations, driver should be added to Ballerina.toml
+import ballerinax/mysql; // for MYSQL operations
+import ballerinax/mysql.driver as _; // for MYSQL operations
 
 listener http:Listener endpoint = new (8080);
 
@@ -101,163 +101,163 @@ listener http:Listener endpoint = new (8080);
 // --------------
 // MySQL Database
 // --------------
-// configurable string USER = ?;
-// configurable string PASSWORD = ?;
-// configurable string HOST = ?;
-// configurable int PORT = ?;
-// configurable string DATABASE = ?;
+configurable string USER = ?;
+configurable string PASSWORD = ?;
+configurable string HOST = ?;
+configurable int PORT = ?;
+configurable string DATABASE = ?;
 
-// final mysql:Client dbClient;
+final mysql:Client dbClient;
 
-// service / on endpoint {
+service / on endpoint {
 
-//     function init() returns error? {
-//         // Connect to the MySQL database
-//         dbClient = check new (host = HOST,
-//             user = USER,
-//             password = PASSWORD,
-//             port = PORT,
-//             database = DATABASE
-//         );
-//     }
+    function init() returns error? {
+        // Connect to the MySQL database
+        dbClient = check new (host = HOST,
+            user = USER,
+            password = PASSWORD,
+            port = PORT,
+            database = DATABASE
+        );
+    }
 
-//     // Create user with hashed and salted password
-//     resource function get getAllUsers() returns json[]|error? {
-//         // Retrieve all users from the database
-//         sql:ParameterizedQuery query = `SELECT * FROM users`;
-//         stream<record {}, sql:Error?> resultStream = dbClient->query(query);
+    // Create user with hashed and salted password
+    resource function get getAllUsers() returns json[]|error? {
+        // Retrieve all users from the database
+        sql:ParameterizedQuery query = `SELECT * FROM users`;
+        stream<record {}, sql:Error?> resultStream = dbClient->query(query);
 
-//         json[] results = [];
-//         check from record {} user in resultStream
-//             do {
-//                 json userJson = {
-//                 "user_name": user.get("user_name").toString(),
-//                 "user_pass": user.get("user_pass").toString()
-//             };
-//                 results.push(userJson);
-//             };
+        json[] results = [];
+        check from record {} user in resultStream
+            do {
+                json userJson = {
+                "user_name": user.get("user_name").toString(),
+                "user_pass": user.get("user_pass").toString()
+            };
+                results.push(userJson);
+            };
 
-//         return results;
-//     }
+        return results;
+    }
 
-//     // Noncompliant
-//     resource function post createUser1(http:Request request) returns json|error? {
-//         // Retrieve the JSON payload from the create request
-//         json data = check request.getJsonPayload();
-//         string userName = check data.userName;
-//         string password = check data.password;
+    // Noncompliant
+    resource function post createUser1(http:Request request) returns json|error? {
+        // Retrieve the JSON payload from the create request
+        json data = check request.getJsonPayload();
+        string userName = check data.userName;
+        string password = check data.password;
 
-//         // Noncompliant
-//         // save to DB
-//         sql:ExecutionResult result = check dbClient->execute(`INSERT INTO users VALUES (${userName}, ${password})`);
+        // Noncompliant
+        // save to DB
+        sql:ExecutionResult result = check dbClient->execute(`INSERT INTO users VALUES (${userName}, ${password})`);
 
-//         // Return the inserted user
-//         return result.toJson();
-//     }
+        // Return the inserted user
+        return result.toJson();
+    }
 
-//     // Compliant
-//     resource function post createUser(http:Request request) returns json|error? {
-//         // Retrieve the JSON payload from the create request
-//         json data = check request.getJsonPayload();
-//         string userName = check data.userName;
-//         string password = check data.password;
+    // Compliant
+    resource function post createUser(http:Request request) returns json|error? {
+        // Retrieve the JSON payload from the create request
+        json data = check request.getJsonPayload();
+        string userName = check data.userName;
+        string password = check data.password;
 
-//         // Create a salt
-//         byte[16] salt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-//         foreach int i in 0 ... (salt.length() - 1) {
-//             salt[i] = <byte>(check random:createIntInRange(0, 255));
-//         }
+        // Create a salt
+        byte[16] salt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        foreach int i in 0 ... (salt.length() - 1) {
+            salt[i] = <byte>(check random:createIntInRange(0, 255));
+        }
 
-//         // Compliant
-//         // Hash the password
-//         byte[] hashedPassword = crypto:hashSha512(password.toBytes(), salt);
+        // Compliant
+        // Hash the password
+        byte[] hashedPassword = crypto:hashSha512(password.toBytes(), salt);
 
-//         // Add the salt to the hashed password
-//         byte[] saltedHashPassword = [...salt, ...hashedPassword];
+        // Add the salt to the hashed password
+        byte[] saltedHashPassword = [...salt, ...hashedPassword];
 
-//         // convert it to a base 16 string (to save in a DB)
-//         string saltedHashPasswordString = saltedHashPassword.toBase16();
+        // convert it to a base 16 string (to save in a DB)
+        string saltedHashPasswordString = saltedHashPassword.toBase16();
 
-//         // Save to DB
-//         sql:ExecutionResult result = check dbClient->execute(`INSERT INTO users VALUES (${userName}, ${saltedHashPasswordString})`);
+        // Save to DB
+        sql:ExecutionResult result = check dbClient->execute(`INSERT INTO users VALUES (${userName}, ${saltedHashPasswordString})`);
 
-//         // Return the inserted user
-//         return result.toJson();
-//     }
+        // Return the inserted user
+        return result.toJson();
+    }
 
-//     resource function put updateCredentials1(http:Request request) returns json|error? {
-//         // Retrieve the JSON payload from the update request
-//         json data = check request.getJsonPayload();
-//         string userName = check data.userName;
-//         string oldPassword = check data.oldPassword;
-//         string newPassword = check data.newPassword;
+    resource function put updateCredentials1(http:Request request) returns json|error? {
+        // Retrieve the JSON payload from the update request
+        json data = check request.getJsonPayload();
+        string userName = check data.userName;
+        string oldPassword = check data.oldPassword;
+        string newPassword = check data.newPassword;
 
-//         // Retrieve the user's old password from the database
-//         sql:ParameterizedQuery query = `SELECT * FROM users where user_name = ${userName}`;
-//         record {} result = check dbClient->queryRow(query);
-//         string storedOldPassword = result.get("user_pass").toString();
+        // Retrieve the user's old password from the database
+        sql:ParameterizedQuery query = `SELECT * FROM users where user_name = ${userName}`;
+        record {} result = check dbClient->queryRow(query);
+        string storedOldPassword = result.get("user_pass").toString();
 
-//         // Noncompliant
-//         if (oldPassword.equalsIgnoreCaseAscii(storedOldPassword)) {
-//             // Update DB
-//             sql:ExecutionResult execResult = check dbClient->execute(`UPDATE users SET user_pass=${newPassword} WHERE user_name=${userName}`);
+        // Noncompliant
+        if (oldPassword.equalsIgnoreCaseAscii(storedOldPassword)) {
+            // Update DB
+            sql:ExecutionResult execResult = check dbClient->execute(`UPDATE users SET user_pass=${newPassword} WHERE user_name=${userName}`);
 
-//             return execResult.toJson();
-//         }
+            return execResult.toJson();
+        }
 
-//         return "Old password does not match";
-//     }
+        return "Old password does not match";
+    }
 
-// resource function put updateCredentials(http:Request request) returns json|error? {
-//     // Retrieve the JSON payload from the update request
-//     json data = check request.getJsonPayload();
-//     string userName = check data.userName;
-//     string oldPassword = check data.oldPassword;
-//     string newPassword = check data.newPassword;
+    resource function put updateCredentials(http:Request request) returns json|error? {
+        // Retrieve the JSON payload from the update request
+        json data = check request.getJsonPayload();
+        string userName = check data.userName;
+        string oldPassword = check data.oldPassword;
+        string newPassword = check data.newPassword;
 
-//     // Retrieve the user's old password from the database
-//     sql:ParameterizedQuery query = `SELECT * FROM users where user_name = ${userName}`;
-//     record {} result = check dbClient->queryRow(query);
+        // Retrieve the user's old password from the database
+        sql:ParameterizedQuery query = `SELECT * FROM users where user_name = ${userName}`;
+        record {} result = check dbClient->queryRow(query);
 
-//     string storedOldPassword = result.get("user_pass").toString();
+        string storedOldPassword = result.get("user_pass").toString();
 
-//     // Compliant
-//     byte[] oldSaltedHashPassword = check array:fromBase16(storedOldPassword);
+        // Compliant
+        byte[] oldSaltedHashPassword = check array:fromBase16(storedOldPassword);
 
-//     byte[16] saltObtained = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-//     foreach int i in 0 ... (saltObtained.length() - 1) {
-//         saltObtained[i] = oldSaltedHashPassword[i]; // Obtaining the salt
-//     }
+        byte[16] saltObtained = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        foreach int i in 0 ... (saltObtained.length() - 1) {
+            saltObtained[i] = oldSaltedHashPassword[i]; // Obtaining the salt
+        }
 
-//     byte[] userGivenOldHashPassword = crypto:hashSha512(oldPassword.toBytes(), saltObtained);
-//     byte[] userGivenOldSaltedHashPassword = [...saltObtained, ...userGivenOldHashPassword];
+        byte[] userGivenOldHashPassword = crypto:hashSha512(oldPassword.toBytes(), saltObtained);
+        byte[] userGivenOldSaltedHashPassword = [...saltObtained, ...userGivenOldHashPassword];
 
-//     // If the old password does not match the one in the database, return an error
-//     if (oldSaltedHashPassword != userGivenOldSaltedHashPassword) {
-//         return "Old password does not match";
-//     }
+        // If the old password does not match the one in the database, return an error
+        if (oldSaltedHashPassword != userGivenOldSaltedHashPassword) {
+            return "Old password does not match";
+        }
 
-//     // Update the users new password (salted and hashed)
-//     byte[16] salt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-//     foreach int i in 0 ... (salt.length() - 1) {
-//         salt[i] = <byte>(check random:createIntInRange(0, 255));
-//     }
+        // Update the users new password (salted and hashed)
+        byte[16] salt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        foreach int i in 0 ... (salt.length() - 1) {
+            salt[i] = <byte>(check random:createIntInRange(0, 255));
+        }
 
-//     // Hash the password
-//     byte[] hashedPassword = crypto:hashSha512(newPassword.toBytes(), salt);
+        // Hash the password
+        byte[] hashedPassword = crypto:hashSha512(newPassword.toBytes(), salt);
 
-//     // Add the salt to the hashed password
-//     byte[] saltedHashPassword = [...salt, ...hashedPassword];
+        // Add the salt to the hashed password
+        byte[] saltedHashPassword = [...salt, ...hashedPassword];
 
-//     // convert it to a base 16 string (to save in a DB)
-//     string saltedHashPasswordString = saltedHashPassword.toBase16();
+        // convert it to a base 16 string (to save in a DB)
+        string saltedHashPasswordString = saltedHashPassword.toBase16();
 
-//     // Save to DB
-//     sql:ExecutionResult execResult = check dbClient->execute(`UPDATE users SET user_pass=${saltedHashPasswordString} WHERE user_name=${userName}`);
+        // Save to DB
+        sql:ExecutionResult execResult = check dbClient->execute(`UPDATE users SET user_pass=${saltedHashPasswordString} WHERE user_name=${userName}`);
 
-//     return execResult.toJson();
-// }
-// }
+        return execResult.toJson();
+    }
+}
 
 // -------------------
 // Postgresql Database
@@ -350,88 +350,88 @@ listener http:Listener endpoint = new (8080);
 // ----------------
 // MongoDB Database
 // ----------------
-configurable string CONNECTION_URL = ?;
-configurable string DATABASE = ?;
+// configurable string CONNECTION_URL = ?;
+// configurable string DATABASE = ?;
 
-final mongodb:Client dbClient;
+// final mongodb:Client dbClient;
 
-service / on endpoint {
+// service / on endpoint {
 
-    function init() returns error? {
-        mongodb:ConnectionConfig config = {
-            connection: {
-                url: CONNECTION_URL
-            },
-            databaseName: DATABASE
-        };
-        // Connect to the MySQL database
-        dbClient = check new (config);
-    }
+//     function init() returns error? {
+//         mongodb:ConnectionConfig config = {
+//             connection: {
+//                 url: CONNECTION_URL
+//             },
+//             databaseName: DATABASE
+//         };
+//         // Connect to the MySQL database
+//         dbClient = check new (config);
+//     }
 
-    // Create user with hashed and salted password
-    resource function get getAllUsers() returns json[]|error? {
-        // Retrieve all users from the database
-        stream<record {}, error?> resultStream = check dbClient->find("users", (), ());
-        json[] results = [];
-        check from record {} user in resultStream
-            do {
-                json userJson = {
-                "user_name": user.get("user_name").toString(),
-                "user_pass": user.get("user_pass").toString()
-            };
-                results.push(userJson);
-            };
+//     // Create user with hashed and salted password
+//     resource function get getAllUsers() returns json[]|error? {
+//         // Retrieve all users from the database
+//         stream<record {}, error?> resultStream = check dbClient->find("users", (), ());
+//         json[] results = [];
+//         check from record {} user in resultStream
+//             do {
+//                 json userJson = {
+//                 "user_name": user.get("user_name").toString(),
+//                 "user_pass": user.get("user_pass").toString()
+//             };
+//                 results.push(userJson);
+//             };
 
-        return results;
-    }
+//         return results;
+//     }
 
-    // Noncompliant
-    resource function post createUser1(http:Request request) returns json|error? {
-        // Retrieve the JSON payload from the create request
-        json data = check request.getJsonPayload();
-        string userName = check data.userName;
-        string password = check data.password;
+//     // Noncompliant
+//     resource function post createUser1(http:Request request) returns json|error? {
+//         // Retrieve the JSON payload from the create request
+//         json data = check request.getJsonPayload();
+//         string userName = check data.userName;
+//         string password = check data.password;
 
-        // Noncompliant
-        // save to DB
-        map<json> doc = {"user_name": userName, "user_pass": password};
-        check dbClient->insert(doc, "users");
+//         // Noncompliant
+//         // save to DB
+//         map<json> doc = {"user_name": userName, "user_pass": password};
+//         check dbClient->insert(doc, "users");
 
-        // Return the inserted user
-        return doc.toJson();
-    }
+//         // Return the inserted user
+//         return doc.toJson();
+//     }
 
-    // Compliant
-    resource function post createUser(http:Request request) returns json|error? {
-        // Retrieve the JSON payload from the create request
-        json data = check request.getJsonPayload();
-        string userName = check data.userName;
-        string password = check data.password;
+//     // Compliant
+//     resource function post createUser(http:Request request) returns json|error? {
+//         // Retrieve the JSON payload from the create request
+//         json data = check request.getJsonPayload();
+//         string userName = check data.userName;
+//         string password = check data.password;
 
-        // Create a salt
-        byte[16] salt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        foreach int i in 0 ... (salt.length() - 1) {
-            salt[i] = <byte>(check random:createIntInRange(0, 255));
-        }
+//         // Create a salt
+//         byte[16] salt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+//         foreach int i in 0 ... (salt.length() - 1) {
+//             salt[i] = <byte>(check random:createIntInRange(0, 255));
+//         }
 
-        // Compliant
-        // Hash the password
-        byte[] hashedPassword = crypto:hashSha512(password.toBytes(), salt);
+//         // Compliant
+//         // Hash the password
+//         byte[] hashedPassword = crypto:hashSha512(password.toBytes(), salt);
 
-        // Add the salt to the hashed password
-        byte[] saltedHashPassword = [...salt, ...hashedPassword];
+//         // Add the salt to the hashed password
+//         byte[] saltedHashPassword = [...salt, ...hashedPassword];
 
-        // convert it to a base 16 string (to save in a DB)
-        string saltedHashPasswordString = saltedHashPassword.toBase16();
+//         // convert it to a base 16 string (to save in a DB)
+//         string saltedHashPasswordString = saltedHashPassword.toBase16();
 
-        // Save to DB
-        map<json> doc = {"user_name": userName, "user_pass": saltedHashPasswordString};
-        check dbClient->insert(doc, "users");
+//         // Save to DB
+//         map<json> doc = {"user_name": userName, "user_pass": saltedHashPasswordString};
+//         check dbClient->insert(doc, "users");
 
-        // Return the inserted user
-        return doc.toJson();
-    }
-}
+//         // Return the inserted user
+//         return doc.toJson();
+//     }
+// }
 
 // ==========================
 // Salting and Veryfying Code
