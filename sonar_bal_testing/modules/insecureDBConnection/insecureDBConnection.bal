@@ -3,18 +3,18 @@ import ballerinax/mysql;
 import ballerinax/mysql.driver as _; // Import the MySQL driver
 
 // Retrieve config variables
-configurable string USER = ?;
-configurable string PASSWORD = ?;
-configurable string HOST = ?;
-configurable int PORT = ?;
-configurable string DATABASE = ?;
+configurable string user = ?;
+configurable string password = ?;
+configurable string host = ?;
+configurable int port = ?;
+configurable string database = ?;
 
 public function connectToDatabase() {
-    mysql:Client|error dbClient = new (host = HOST,
-        user = USER,
-        password = PASSWORD, // Noncompliant
-        port = PORT,
-        database = DATABASE
+    mysql:Client|error dbClient = new (host = host,
+        user = user,
+        password = password, // Noncompliant
+        port = port,
+        database = database
     );
 
     // ...

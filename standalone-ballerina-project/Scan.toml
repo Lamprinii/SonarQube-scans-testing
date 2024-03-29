@@ -3,10 +3,10 @@ name = "sonarqube"
 path = "C:\\Users\\Tharana Wanigaratne\\Desktop\\ballerina-scan-tool\\sonar-platform-plugin\\build\\libs\\sonar-platform-plugin-1.0.jar"
 #sonarProjectPropertiesPath = "sonar-project.properties"
 
-[[plugin]]
+[[analyzer]]
 org = "tharana_wanigaratne"
 name = "custom_static_code_analyzer"
 version = "0.1.0"
 
 [rule]
-ids = "S108"
+include = ["B109"]

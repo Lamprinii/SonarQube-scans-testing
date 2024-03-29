@@ -18,8 +18,6 @@ public function checkPanicFunction() {
     checkpanicVariable = "checkpanic";
 
     io:println(checkpanicVariable);
-
-    checkpanic checkpanic checkpanic
 }
 
 // Checkpanic function
