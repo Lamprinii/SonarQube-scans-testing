@@ -5,8 +5,4 @@ path = "C:\\Users\\Tharana Wanigaratne\\Desktop\\ballerina-scan-tool\\sonar-plat
 
 [[analyzer]]
 org = "tharana_wanigaratne"
-name = "custom_static_code_analyzer"
-version = "0.1.0"
-
-[rule]
-include = ["B109"]
+name = "custom_rules_analyzer"

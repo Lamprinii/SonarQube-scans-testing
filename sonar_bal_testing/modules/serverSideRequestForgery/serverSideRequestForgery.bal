@@ -27,13 +27,9 @@ service / on endpoint {
 //         allowedHosts.push("http://trusted1.example.com");
 //         allowedHosts.push("http://trusted2.example.com");
 
-//         boolean hostIsSecure = false;
-//         foreach string host in allowedHosts {
-//             if (host.equalsIgnoreCaseAscii(urlName)) {
-//                 hostIsSecure = true;
-//                 break;
-//             }
-//         }
+//         boolean hostIsSecure = allowedHosts.some(allowedHost =>
+//             allowedHost.equalsIgnoreCaseAscii(urlName)
+//         );
 
 //         if hostIsSecure {
 //             http:Response response = check testClient->get("/");

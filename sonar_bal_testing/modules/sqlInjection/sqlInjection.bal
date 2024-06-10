@@ -19,8 +19,10 @@ type User record {
     int age;
 };
 
+listener http:Listener endpoint = new (8080);
+
 // Define the service endpoint
-service / on new http:Listener(8080) {
+service / on endpoint {
     resource function get userDetails() returns string|error? {
         // Connect to the MySQL database
         mysql:Client dbClient = check new (host = HOST,
@@ -54,7 +56,7 @@ service / on new http:Listener(8080) {
 }
 
 // Define the service endpoint (Secure and Compliant)
-// service / on new http:Listener(8080) {
+// service / on endpoint {
 //     resource function get userDetails(string username, string password) returns string|error? {
 //         // Connect to the MySQL database
 //         mysql:Client dbClient = check new (host = HOST,

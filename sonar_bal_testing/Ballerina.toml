@@ -2,17 +2,7 @@
 org = "tharana_wanigaratne"
 name = "sonar_bal_testing"
 version = "0.1.0"
-distribution = "2201.8.5"
-
-[build-options]
-observabilityIncluded = true
-
-# For custom rules analysis with Ballerina Scan Tool (No longer needed as these can be mentioned in a Scan.toml file)
-#[[dependency]]
-#version="0.1.0"
-#org = "tharana_wanigaratne"
-# name = "custom_static_code_analyzer"
-#repository="local"
+distribution = "2201.9.0"
 
 # For plain text password saving rule testing
 # [[platform.java17.dependency]]

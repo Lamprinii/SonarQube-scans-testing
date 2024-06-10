@@ -1,5 +1,5 @@
 import ballerina/io;
-import ballerina/websocket; // module is not working with version 8.5 patch
+import ballerina/websocket;
 
 // // ====
 // // NOTE

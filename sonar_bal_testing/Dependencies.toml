@@ -5,7 +5,7 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.8.5"
+distribution-version = "2201.8.6"
 
 [[package]]
 org = "ballerina"
@@ -66,37 +66,8 @@ modules = [
 
 [[package]]
 org = "ballerina"
-name = "graphql"
-version = "1.10.1"
-dependencies = [
-	{org = "ballerina", name = "auth"},
-	{org = "ballerina", name = "file"},
-	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "io"},
-	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "jwt"},
-	{org = "ballerina", name = "lang.array"},
-	{org = "ballerina", name = "lang.regexp"},
-	{org = "ballerina", name = "lang.value"},
-	{org = "ballerina", name = "log"},
-	{org = "ballerina", name = "mime"},
-	{org = "ballerina", name = "oauth2"},
-	{org = "ballerina", name = "task"},
-	{org = "ballerina", name = "time"},
-	{org = "ballerina", name = "uuid"},
-	{org = "ballerina", name = "websocket"}
-]
-modules = [
-	{org = "ballerina", packageName = "graphql", moduleName = "graphql"},
-	{org = "ballerina", packageName = "graphql", moduleName = "graphql.dataloader"},
-	{org = "ballerina", packageName = "graphql", moduleName = "graphql.parser"},
-	{org = "ballerina", packageName = "graphql", moduleName = "graphql.subgraph"}
-]
-
-[[package]]
-org = "ballerina"
 name = "http"
-version = "2.10.10"
+version = "2.10.12"
 dependencies = [
 	{org = "ballerina", name = "auth"},
 	{org = "ballerina", name = "cache"},
@@ -253,6 +224,9 @@ dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "lang.int"}
 ]
+modules = [
+	{org = "ballerina", packageName = "mime", moduleName = "mime"}
+]
 
 [[package]]
 org = "ballerina"
@@ -352,17 +326,6 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
-name = "uuid"
-version = "1.7.0"
-dependencies = [
-	{org = "ballerina", name = "crypto"},
-	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "lang.int"},
-	{org = "ballerina", name = "time"}
-]
-
-[[package]]
-org = "ballerina"
 name = "websocket"
 version = "2.10.1"
 dependencies = [
@@ -438,10 +401,10 @@ version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "crypto"},
 	{org = "ballerina", name = "file"},
-	{org = "ballerina", name = "graphql"},
 	{org = "ballerina", name = "http"},
 	{org = "ballerina", name = "io"},
 	{org = "ballerina", name = "lang.array"},
+	{org = "ballerina", name = "mime"},
 	{org = "ballerina", name = "os"},
 	{org = "ballerina", name = "random"},
 	{org = "ballerina", name = "regex"},
@@ -455,6 +418,7 @@ dependencies = [
 modules = [
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.autoEscapeDisabledTemplateRendering"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.ballerinaStyleGuideRules"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.credentialsNotHardCoded"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.disclosingFingerprints"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.emptyFunction"},
@@ -478,6 +442,7 @@ modules = [
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.serverSideRequestForgery"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.sqlInjection"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.tooManyParameters"},
+	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.unclosedSQLStoredProcedures"},
 	{org = "tharana_wanigaratne", packageName = "sonar_bal_testing", moduleName = "sonar_bal_testing.weakHashingAlgorithms"}
 ]
 

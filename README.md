@@ -236,10 +236,11 @@ gradlew sonar -Dorg.gradle.debug=true --no-daemon -Dorg.gradle.debug.port=8000
 ```
 
 3. It's possible to keep the execution reports of an analysis in the .scannerwork directory without deleting
-them with the following property
-// sonar.scanner.keepReport=true
+   them with the following property
+   // sonar.scanner.keepReport=true
 
 ### Setting up debug points in the scanners:
+
 1. Create a breakpoint in the required java project class file with a java remote debug configuration set up
 
 2. Click the debug icon, to start debugging
