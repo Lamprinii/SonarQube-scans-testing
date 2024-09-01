@@ -8,4 +8,14 @@ node {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
+  stage('SQLMap Scan') {
+            steps {
+                script {
+                    def targetUrl = "http://example.com/vulnerable_endpoint"
+                    def sqlmapOptions = "--batch --dbs"
+
+                    sh "sqlmap -u ${targetUrl} ${sqlmapOptions}"
+                }
+            }
+        }
 }
