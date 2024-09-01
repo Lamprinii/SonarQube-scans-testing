@@ -18,4 +18,20 @@ node {
                 }
             }
         }
+  stage('Build Docker Image') {
+            steps {
+                script {
+                    // Κατασκευή Docker image
+                    sh 'docker build -t my-app:latest .'
+                }
+            }
+        }
+        stage('Scan Docker Image for Vulnerabilities') {
+            steps {
+                script {
+                    // Έλεγχος ευπαθειών με Trivy
+                    sh 'trivy image my-app:latest'
+                }
+            }
+        }
 }
